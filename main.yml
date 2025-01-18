@@ -1,0 +1,4 @@
+- name: Include servers role
+  hosts: servers
+  roles:
+    - servers
