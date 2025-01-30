@@ -1,4 +1,4 @@
-- name: Common packages should be installed
+- name: Common packages that should be installed
   ansible.builtin.package:
     name:
       - git

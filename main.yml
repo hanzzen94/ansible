@@ -1,4 +1,5 @@
 - name: Include servers role
   hosts: servers
+  become: true
   roles:
     - servers
