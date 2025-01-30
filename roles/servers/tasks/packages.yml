@@ -1,5 +1,5 @@
 - name: Common packages should be installed
-  ansible.builtin.packages:
+  ansible.builtin.package:
     name:
       - git
       - vim
