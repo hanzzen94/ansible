@@ -1,4 +1,6 @@
 - name: Common packages should be installed
   ansible.builtin.packages:
-    - git
-    - vim
+    name:
+      - git
+      - vim
+    state: latest
