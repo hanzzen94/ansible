@@ -12,3 +12,9 @@
   ansible.builtin.package:
     name:
       - tmux
+
+- name: Podman should be installed
+  ansible.builtin.package:
+    name:
+      - podman
+      - podman-compose
