@@ -1,7 +1,7 @@
 - name: Add self signed certificate .crt to certificate
   ansible.builtin.file:
     copy:
-      dest: /usr/share/pki/ca-trust-source/anchors/lauvehansen.xyz.crt
+      path: /usr/share/pki/ca-trust-source/anchors/lauvehansen.xyz.crt
       content: |
         -----BEGIN CERTIFICATE-----
         MIIGBTCCA+2gAwIBAgIURnTHsd5iHAx7zgmo0OYTdFJxJogwDQYJKoZIhvcNAQEL
