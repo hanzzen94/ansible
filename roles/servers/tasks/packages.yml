@@ -1,14 +1,14 @@
-- name: Git should be installed and up to date
+- name: Git should be installed
   ansible.builtin.package:
     name:
       - git
 
-- name: Vim should be installed and up to date
+- name: Vim should be installed
   ansible.builtin.package:
     name:
       - vim
 
-- name: Tmux should be installed and up to date
+- name: Tmux should be installed
   ansible.builtin.package:
     name:
       - tmux
