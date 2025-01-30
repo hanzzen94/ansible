@@ -5,7 +5,3 @@
 - name: Disable root account
   ansible.builtin.include_tasks:
     file: root.yml
-
-- name: Add self signed certificate .crt to certificate
-  ansible.builtin.include_tasks:
-    file: certificate.yml
