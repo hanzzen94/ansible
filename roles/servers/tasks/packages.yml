@@ -1,6 +1,17 @@
-- name: Common packages that should be installed
+- name: git should be installed and up to date
   ansible.builtin.package:
     name:
       - git
+    state: latest
+
+- name: vim should be installed and up to date
+  ansible.builtin.package:
+    name:
       - vim
+    state: latest
+
+- name: tmux should be installed and up to date
+  ansible.builtin.package:
+    name:
+      - tmux
     state: latest
