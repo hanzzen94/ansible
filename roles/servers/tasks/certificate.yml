@@ -1,0 +1,45 @@
+- name: Add self signed certificate .crt to certificate
+  ansible.builtin.file:
+    copy:
+      dest: /usr/share/pki/ca-trust-source/anchors/lauvehansen.xyz.crt
+      content: |
+        -----BEGIN CERTIFICATE-----
+        MIIGBTCCA+2gAwIBAgIURnTHsd5iHAx7zgmo0OYTdFJxJogwDQYJKoZIhvcNAQEL
+        BQAwgZExCzAJBgNVBAYTAk5PMQ0wCwYDVQQIDARPc2xvMQ0wCwYDVQQHDARPc2xv
+        MSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxGDAWBgNVBAMMD2xh
+        dXZlaGFuc2VuLnh5ejEnMCUGCSqGSIb3DQEJARYYaGF2YXJkLmhhbnNlbkBwb3N0
+        ZW8ubmV0MB4XDTI1MDEzMDE3MzYxOVoXDTM1MDEyODE3MzYxOVowgZExCzAJBgNV
+        BAYTAk5PMQ0wCwYDVQQIDARPc2xvMQ0wCwYDVQQHDARPc2xvMSEwHwYDVQQKDBhJ
+        bnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxGDAWBgNVBAMMD2xhdXZlaGFuc2VuLnh5
+        ejEnMCUGCSqGSIb3DQEJARYYaGF2YXJkLmhhbnNlbkBwb3N0ZW8ubmV0MIICIjAN
+        BgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAr9W7wa9Ky9Xy5I+/So+z2zGUPqEo
+        tLuY/YxizcUd7p3YzRun5ffgoj4tBLBE/3laDC531roqjgpUpWRRGHDeP+t8tuHr
+        lrM3uSuVMlnTQZRQ2Zk7TZ+NVNH0oH9EbEcfM3hOwmlY0ZcN93pTwVZ/9HoLTIao
+        05suwIweCUwPKs+BzKGbtIfzVdbvpERLn4/yWffLX4UAfhddI3zlejI+x/vGkLbq
+        Q4yyJjifINZyT3SNvtRu8q+xdb6aXUjxAOZ1wjnLbQvuYgkW0mVRxvv6o3LtircX
+        Nw9uqyZTYxdHEUb+hAVIyY7SPsSF65DgDA/gkrIOFI8BBVtm3c2Pzr2s3/PkU0sp
+        Ue+Xjl88BfuC69euuA9UcU5NBVnPv0+p8XneeGmquwrhfdDugFATRm+YALF5Apxm
+        9964DG5cwWeSZxA5gYOmbSJDVKqCH3CSZHPLsnpl7E5+SH/pQeeYTW2NqlEg8JSp
+        u2tKsbPqbZ1i6M7mVeOh/i7v56q9VvStJNgA22MELKi2wvLCT8k5KPG5FyhROnCa
+        URy5jWLzh2iZa3+w/ArPtfAnK9MkbwRguBv0Z5pSMrLrJbN6ofMJVKlNSkjAHQ+M
+        BSu/JZ/83FSSRcZu+nmB3P8toFwhGib+TMPzQh5AUQTrFsHGvTuBrzIalUsNpeSA
+        9P0ydHBimkyYOk0CAwEAAaNTMFEwHQYDVR0OBBYEFJQTTuTH9BGtkoy7UVgJi4m9
+        nerhMB8GA1UdIwQYMBaAFJQTTuTH9BGtkoy7UVgJi4m9nerhMA8GA1UdEwEB/wQF
+        MAMBAf8wDQYJKoZIhvcNAQELBQADggIBADDxZRaUnRP7cj/A3FEbHjSPCKPcV64/
+        2y8NiVlqJ6P49QxDMEBaYhZLZmyltFgqUXQxP+ghn86kkGca8PxXvTHqwSbQV4ML
+        xRx7gyR8JGukPV37MujmpDa4XikPIX86R1MloQ3oPQT8vbrJ3Qc9cvHiAiMTsgv1
+        YjHbnpagnRfoQ7Fm9BnZl/7WTuL4vbZxxEhyx5Jicl6jMfJ/z6OTP6QwVdfLLzgx
+        qjQLH4/CbZvMjKIdd1qG8fdJIeYnRnGCDBkk0T4pAhxnBYgitLwf1i4vXuto+z7p
+        +mXGBqln6jim7yhVYS9TwID6GnnmOjTQsZq9/s81ZNPuepIbYHfCX7T2AJii0sPG
+        8jzVRLVnm0GpEUfMO2SvJAaRwiq5f342fgz4g9Vq1B0z2cv+cDY4I8RMAXDXa+7p
+        +0b9RLF1v4ncpXThLrzq8VbOVdFA9UOoTfjDS9qUXeemuceSYruyMd2bOKoD8Eyy
+        EWYV2xE2IAIU9+HLCSKO5c/a326ryRLFyy9GrsL5AaOFeR6K7/HFSD6VrGlI/6mV
+        GuRuLLMXzy8/lWbZ2RLdOI2/9FF+WpUxFYQgVeScG3lDu33mKKtDjsMQ0xeBWROD
+        bb3KbRVvlWCKbZ7IfSeNLvuNwnnhCvgCH9TIGLOUaiypU2+a1E/bvOHON2yhcyl6
+        cnqbfimHI3lK
+        -----END CERTIFICATE-----
+      notify: update-ca-trust
+
+- name: Update CA trust
+  ansible.builtin.command: update-ca-trust
+  changed_when: false
