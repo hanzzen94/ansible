@@ -1,0 +1,3 @@
+- name: Timezone should be set to Europe/Oslo
+  community.general.timezone:
+    name: Europe/Oslo
