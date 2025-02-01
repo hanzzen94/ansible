@@ -1,5 +1,7 @@
 - name: Include servers role
   hosts: servers
   become: true
+  gather_facts: false
+
   roles:
     - servers

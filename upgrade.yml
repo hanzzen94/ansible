@@ -1,6 +1,7 @@
 - name: Install updates
   hosts: servers
   become: true
+  gather_facts: false
 
   tasks:
     - name: Upgrade all packages
