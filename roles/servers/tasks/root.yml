@@ -1,3 +1,4 @@
+---
 - name: Root account should be disabled
   ansible.builtin.user:
     name: root

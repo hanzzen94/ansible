@@ -1,3 +1,4 @@
+---
 - name: Git should be installed
   ansible.builtin.package:
     name:
@@ -13,7 +14,7 @@
     name:
       - tmux
 
-- name: Podman should be installed
+- name: Podman and Podman-Compose should be installed
   ansible.builtin.package:
     name:
       - podman
