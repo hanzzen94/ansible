@@ -5,3 +5,7 @@
 - name: Disable root account
   ansible.builtin.include_tasks:
     file: root.yml
+
+- name: Set timezone
+  ansible.builtin.include_tasks:
+    file: timezone.yml
