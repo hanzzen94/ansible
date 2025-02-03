@@ -3,7 +3,7 @@
   ansible.builtin.copy:
     dest: /etc/systemd/system/dockge.service
     mode: '0644'
-    copy: |
+    content: |
       [Unit]
       Description=Dockge
       After=network.target
@@ -22,7 +22,7 @@
   ansible.builtin.copy:
     dest: /etc/systemd/system/semaphore.service
     mode: '0644'
-    copy: |
+    content: |
       [Unit]
       Description=Semaphore
       After=network.target
@@ -41,7 +41,7 @@
   ansible.builtin.copy:
     dest: /etc/systemd/system/homeassistant.service
     mode: '0644'
-    copy: |
+    content: |
       [Unit]
       Description=Home Assistant
       After=network.target
@@ -60,7 +60,7 @@
   ansible.builtin.copy:
     dest: /etc/systemd/system/qbittorrent.service
     mode: '0644'
-    copy: |
+    content: |
       [Unit]
       Description=qBittorrent
       After=network.target
@@ -79,7 +79,7 @@
   ansible.builtin.copy:
     dest: /etc/systemd/system/cloudflared.service
     mode: '0644'
-    copy: |
+    content: |
       [Unit]
       Description=Cloudflared
       After=network.target
