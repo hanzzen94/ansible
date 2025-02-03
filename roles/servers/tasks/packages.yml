@@ -19,3 +19,9 @@
     name:
       - podman
       - podman-compose
+
+- name: Python should be installed
+  ansible.builtin.package:
+    name:
+      - python3
+      - python3-pip
