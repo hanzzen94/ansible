@@ -10,7 +10,7 @@
       Requires=network.target
       [Service]
       Type=simple
-      WorkingDirectory=/root/dockge
+      WorkingDirectory=/opt/dockge
       ExecStart=/bin/podman-compose up -d
       ExecStop=/bin/podman-compose down
       Restart=always
