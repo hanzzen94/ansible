@@ -1,0 +1,9 @@
+- name: Configure podman host
+  hosts: podman_host
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Configure podman quadlets
+      ansible.builtin.include_tasks:
+        file: roles/servers/tasks/podman_compose_services.yml
