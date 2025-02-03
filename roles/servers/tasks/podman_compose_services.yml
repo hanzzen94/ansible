@@ -11,7 +11,7 @@
       [Service]
       Type=simple
       WorkingDirectory=/opt/dockge
-      ExecStart=/bin/podman-compose up -d
+      ExecStart=/bin/podman-compose up
       ExecStop=/bin/podman-compose down
       Restart=always
       RestartSec=10
@@ -30,7 +30,7 @@
       [Service]
       Type=simple
       WorkingDirectory=/opt/stacks/semaphore
-      ExecStart=/bin/podman-compose up -d
+      ExecStart=/bin/podman-compose up
       ExecStop=/bin/podman-compose down
       Restart=always
       RestartSec=10
@@ -49,7 +49,7 @@
       [Service]
       Type=simple
       WorkingDirectory=/opt/stacks/homeassistant
-      ExecStart=/bin/podman-compose up -d
+      ExecStart=/bin/podman-compose up
       ExecStop=/bin/podman-compose down
       Restart=always
       RestartSec=10
@@ -68,7 +68,7 @@
       [Service]
       Type=simple
       WorkingDirectory=/opt/stacks/qbittorrent
-      ExecStart=/bin/podman-compose up -d
+      ExecStart=/bin/podman-compose up
       ExecStop=/bin/podman-compose down
       Restart=always
       RestartSec=10
@@ -87,7 +87,7 @@
       [Service]
       Type=simple
       WorkingDirectory=/opt/stacks/cloudflared
-      ExecStart=/bin/podman-compose up -d
+      ExecStart=/bin/podman-compose up
       ExecStop=/bin/podman-compose down
       Restart=always
       RestartSec=10
