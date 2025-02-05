@@ -1,32 +1,11 @@
 ---
-- name: Git should be installed
+- name: Essintial packages should be installed
   ansible.builtin.package:
     name:
       - git
-
-- name: Vim should be installed
-  ansible.builtin.package:
-    name:
       - vim
-
-- name: Tmux should be installed
-  ansible.builtin.package:
-    name:
       - tmux
-
-- name: Podman and Podman-Compose should be installed
-  ansible.builtin.package:
-    name:
       - podman
-      - podman-compose
-
-- name: Python should be installed
-  ansible.builtin.package:
-    name:
+      - docker-compose
       - python3
-      - python3-pip
-
-- name: Neovim should be installed
-  ansible.builtin.package:
-    name:
-      - neovim
+      - pip3
