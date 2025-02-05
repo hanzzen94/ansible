@@ -6,6 +6,6 @@
       - vim
       - tmux
       - podman
-      - docker-compose
+      - podman-compose
       - python3
       - pip3
