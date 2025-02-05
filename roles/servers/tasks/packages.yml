@@ -8,4 +8,3 @@
       - podman
       - podman-compose
       - python3
-      - pip3
