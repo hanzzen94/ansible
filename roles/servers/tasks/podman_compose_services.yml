@@ -1,26 +1,33 @@
 ---
-- name: Systemd service for dockge should exist
+- name: Ensure systemd service for Dockge exists
   ansible.builtin.copy:
     dest: /etc/systemd/system/dockge.service
     mode: '0644'
+    owner: root
+    group: root
     content: |
       [Unit]
       Description=Dockge
       After=network.target
       Requires=network.target
+
       [Service]
       Type=simple
       WorkingDirectory=/opt/dockge
-      ExecStart=/bin/podman-compose up
-      ExecStop=/bin/podman-compose down
+      ExecStart=/usr/bin/podman-compose up
+      ExecStop=/usr/bin/podman-compose down
       Restart=always
       RestartSec=10
+
       [Install]
       WantedBy=multi-user.target
 
-- name: Systemd service dockge should be enabled and started
+- name: Reload systemd to apply Dockge service changes
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: Ensure Dockge systemd service is enabled and started
   ansible.builtin.systemd:
     name: dockge
     enabled: true
     state: started
-    daemon_reload: true

@@ -1,9 +1,10 @@
-- name: Install updates
+---
+- name: Upgrade all packages on servers
   hosts: servers
   become: true
   gather_facts: false
 
   tasks:
-    - name: Upgrade all packages
+    - name: Include package upgrade tasks
       ansible.builtin.include_tasks:
         file: roles/servers/tasks/yum_upgrade.yml

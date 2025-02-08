@@ -1,9 +1,11 @@
 ---
-- name: All packages should be up to date
+- name: Ensure all packages are up to date
   ansible.builtin.dnf:
-    name: '*'
+    name: "*"
     state: latest
+    update_only: true
 
-- name: Unneeded packages should be removed
+- name: Remove unneeded packages
   ansible.builtin.dnf:
     autoremove: true
+    state: absent

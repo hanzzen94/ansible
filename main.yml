@@ -1,7 +1,8 @@
-- name: Include servers role
+---
+- name: Apply the 'servers' role to all servers
   hosts: servers
   become: true
   gather_facts: false
 
   roles:
-    - servers
+    - role: servers

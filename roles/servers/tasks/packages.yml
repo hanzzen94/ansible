@@ -1,5 +1,5 @@
 ---
-- name: Essintial packages should be installed
+- name: Ensure essential packages are installed
   ansible.builtin.package:
     name:
       - git
@@ -8,3 +8,4 @@
       - podman
       - podman-compose
       - python3
+    state: present

@@ -1,8 +1,6 @@
 ---
-- name: user hlh should have ssh keys added
+- name: Ensure user hlh has SSH keys added
   ansible.posix.authorized_key:
     user: hlh
     state: present
-    key: '{{ item }}'
-  with_file:
-    ../files/public_keys/p14s.pub
+    key: "{{ lookup('file', '../files/public_keys/p14s.pub') }}"

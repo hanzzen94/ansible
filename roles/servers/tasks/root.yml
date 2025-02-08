@@ -1,6 +1,7 @@
 ---
-- name: Root account should be disabled
+- name: Disable the root account
   ansible.builtin.user:
     name: root
-    shell: /usr/bin/nologin
+    shell: /usr/sbin/nologin
     password: '!'
+    state: present
