@@ -1,0 +1,32 @@
+---
+- name: Ensure node_exporter is installed
+  ansible.builtin.package:
+    name: golang-github-prometheus-node-exporter
+    state: present
+
+- name: Ensure systemd service for node_exporter exists
+  ansible.builtin.copy:
+    dest: /etc/systemd/system/node_exporter.service
+    mode: '0644'
+    owner: root
+    group: root
+    content: |
+      [Unit]
+      Description=Node Exporter
+      
+      [Service]
+      EnvironmentFile=/etc/sysconfig/node_exporter
+      ExecStart=/usr/local/bin/node_exporter $OPTIONS
+
+      [Install]
+      WantedBy=multi-user.target
+
+- name: Reload systemd to apply node_exporter service changes
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: Ensure node_exporter systemd service is enabled and started
+  ansible.builtin.systemd:
+    name: node_exporter
+    enabled: true
+    state: started
