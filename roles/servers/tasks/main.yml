@@ -10,3 +10,7 @@
 - name: Set timezone
   ansible.builtin.include_tasks:
     file: time_zone.yml
+
+- name: Add ssh keys
+  ansible.builtin.indclude_tasks:
+    file: ssh_keys.yml
