@@ -13,4 +13,4 @@
 
 - name: Show packages that were installed
   ansible.builtin.debug:
-    msg: {{ packages_installed.results }}
+    msg: "{{ packages_installed.results }}"
