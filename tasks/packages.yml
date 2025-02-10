@@ -7,10 +7,3 @@
       - tmux
       - python3
     state: present
-  
-  ansible.builtin.package:
-    name:
-      - podman
-      - podman-compose
-      - podman-docker
-    state: absent
