@@ -1,8 +1,16 @@
 ---
-- name: Apply the 'servers' role to all servers
-  hosts: servers
-  become: true
-  gather_facts: false
+- name: Set system timezone
+  ansible.builtin.include_tasks:
+    file: tasks/time_zone.yml
 
-  roles:
-    - role: servers
+- name: Install packages
+  ansible.builtin.include_tasks:
+    file: tasks/packages.yml
+
+- name: Configure SSH keys
+  ansible.builtin.include_tasks:
+    file: tasks/ssh_keys.yml
+
+- name: Disable root account for security
+  ansible.builtin.include_tasks:
+    file: tasks/root.yml

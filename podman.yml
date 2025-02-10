@@ -7,4 +7,4 @@
   tasks:  
     - name: Include Podman quadlet configuration tasks  
       ansible.builtin.include_tasks:  
-        file: roles/servers/tasks/podman_compose_services.yml  
+        file: tasks/podman_compose_services.yml  

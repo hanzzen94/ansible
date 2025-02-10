@@ -7,4 +7,4 @@
   tasks:  
     - name: Include Prometheus node exporter configuration tasks  
       ansible.builtin.include_tasks:  
-        file: roles/servers/tasks/prometheus_node_exporter.yml
+        file: tasks/prometheus_node_exporter.yml
