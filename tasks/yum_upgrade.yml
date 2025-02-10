@@ -4,6 +4,10 @@
     name: "*"
     state: latest
     update_only: true
+    enablerepo:
+      - baseos
+      - appstream
+      - extras
   register: updated_packages
   until: updated_packages is success
   retries: 2
