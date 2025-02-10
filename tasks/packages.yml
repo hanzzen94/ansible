@@ -9,8 +9,3 @@
       - podman-compose
       - python3
     state: present
-  register: packages_installed
-
-- name: Show packages that were installed
-  ansible.builtin.debug:
-    msg: "{{ packages_installed.results }}"
