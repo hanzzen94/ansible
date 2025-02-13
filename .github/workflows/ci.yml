@@ -9,7 +9,7 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    container: ansible/ansible:latest
+    container: alpine/ansible
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
