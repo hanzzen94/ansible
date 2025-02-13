@@ -1,10 +1,10 @@
 ---
-- name: Configure Prometheus node exporter  
+- name: Configure Prometheus node exporter
   hosts: servers
-  become: true  
+  become: true
   gather_facts: false
 
-  tasks:  
-    - name: Include Prometheus node exporter configuration tasks  
-      ansible.builtin.include_tasks:  
+  tasks:
+    - name: Include Prometheus node exporter configuration tasks
+      ansible.builtin.include_tasks:
         file: tasks/prometheus_node_exporter.yml
