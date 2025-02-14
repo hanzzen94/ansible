@@ -3,4 +3,6 @@
   ansible.posix.authorized_key:
     user: hlh
     state: present
-    key: "{{ lookup('file', '../files/public_keys/p14s.pub') }}"
+    key:
+      - "{{ lookup('file', '../files/public_keys/Endeavour-Desktop.pub') }}"
+      - "{{ lookup('file', '../files/public_keys/p14s.pub') }}"
