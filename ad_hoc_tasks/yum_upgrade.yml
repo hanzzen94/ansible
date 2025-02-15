@@ -1,20 +1,27 @@
 ---
-- name: Ensure all packages are up to date
-  ansible.builtin.dnf:
-    name: "*"
-    state: latest
-    update_only: true
-    enablerepo:
-      - baseos
-      - appstream
-      - extras
-  register: updated_packages
+- name: Update packages
+  hosts: all
+  become: yes
+  gather_facts: no
 
-- name: Show updated packages
-  ansible.builtin.debug:
-    msg: "{{ updated_packages.results }}"
+  tasks:
+    - name: Ensure all packages are up to date
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        update_only: true
+        enablerepo:
+          - baseos
+          - appstream
+          - extras
+      register: updated_packages
 
-- name: Remove unneeded packages
-  ansible.builtin.dnf:
-    autoremove: true
-    state: absent
+    - name: Show updated packages
+      ansible.builtin.debug:
+        msg: "{{ updated_packages.results }}"
+
+    - name: Remove unneeded packages
+      ansible.builtin.dnf:
+        autoremove: true
+        state: absent
+ 
