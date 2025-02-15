@@ -5,5 +5,6 @@
   gather_facts: false
 
   tasks:
-    ansible.builtin.include_role:
-      name: servers
+    - name: Run tasks in servers role
+      ansible.builtin.include_roles:
+        name: servers
