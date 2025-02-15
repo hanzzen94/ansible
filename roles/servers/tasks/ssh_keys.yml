@@ -5,5 +5,5 @@
     state: present
     key: "{{ item }}"
   with_file:
-    - ../files/public_keys/Endeavour-Desktop.pub
-    - ../files/public_keys/p14s.pub
+    - ../../../files/public_keys/Endeavour-Desktop.pub
+    - ../../../files/public_keys/p14s.pub
