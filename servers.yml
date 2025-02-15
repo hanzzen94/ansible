@@ -4,5 +4,6 @@
   become: true
   gather_facts: false
 
-  roles:
-    - servers
+  tasks:
+    ansible.builtin.include_role:
+      name: servers

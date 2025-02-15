@@ -7,17 +7,8 @@ Manage server utilities, configure Podman, set timezone, and update packages usi
 1. Install **Ansible**.
 2. Run the playbook:
    ```bash
-   ansible-playbook -i inventory.yml main.yml
+   ansible-playbook -i inventory.yml {{ playbook }}.yml
    ```
-
-## Structure
-
-1. `main.yml`: Orchestrates tasks.
-2. `packages.yml`: Installs essential packages.
-3. `podman_compose_services.yml`: Configures systemd services for Podman Compose.
-4. `root.yml`: Disables the root account.
-5. `time_zone.yml`: Sets the timezone.
-6. `yum_upgrade.yml`: Updates all installed packages.
 
 ## Additional Information
 
