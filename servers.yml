@@ -8,3 +8,4 @@
     - name: Run tasks in servers role
       ansible.builtin.import_role:
         name: servers
+        tasks_from: main.yml
