@@ -8,7 +8,7 @@
       - baseos
       - appstream
       - extras
-  register: updated_package
+  register: updated_packages
 
 - name: Show updated packages
   ansible.builtin.debug:
