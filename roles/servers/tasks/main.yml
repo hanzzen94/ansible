@@ -1,20 +1,20 @@
 ---
-- name: Set system timezone
-  ansible.builtin.include_tasks:
-    file: time_zone.yml
-
-- name: Install packages
+- name: Packages
   ansible.builtin.include_tasks:
     file: packages.yml
 
-- name: Configure SSH keys
+- name: Prometheus Node Exporter
   ansible.builtin.include_tasks:
-    file: ssh_keys.yml
+    file: prometheus_node_exporter.yml
 
-- name: Disable root account for security
+- name: Root
   ansible.builtin.include_tasks:
     file: root.yml
 
-- name: Install node exporter
+- name: SSH
   ansible.builtin.include_tasks:
-    file: prometheus_node_exporter.yml
+    file: ssh_keys.yml
+
+- name: Timezone
+  ansible.builtin.include_tasks:
+    file: time_zone.yml
