@@ -1,9 +1,8 @@
 ---
 - name: Ensure hlh has nushell as their shell
   ansible.builtin.user:
-    user:
-      name: hlh
-      shell: /usr/bin/nu
+    name: hlh
+    shell: /usr/bin/nu
 
 - name: Ensure user hlh has SSH keys added
   ansible.posix.authorized_key:
