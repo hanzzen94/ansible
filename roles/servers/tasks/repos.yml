@@ -3,6 +3,8 @@
   ansible.builtin.yum_repository:
     name: epel
     description: Extra Packages for Enterprise Linux
-    baseurl: "https://dl.fedoraproject.org/pub/epel/{{ ansible_distribution_major_version }}/Everything/x86_64/"
+    baseurl: "https://dl.fedoraproject.org/pub/epel/{{ os_version_major }}/Everything/x86_64/"
     gpgcheck: true
     enabled: true
+  vars:
+    os_version_major: "{{ ansible_distribution_version.split('.')[0] }}"
