@@ -3,8 +3,8 @@
   ansible.builtin.package:
     name:
       - git
-      - python3
       - nu
+      - python3
       - tmux
       - vim
     state: present
