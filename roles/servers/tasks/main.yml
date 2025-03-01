@@ -1,4 +1,8 @@
 ---
+- name: Repositories
+  ansible.builtin.include_tasks:
+    file: repos.yml
+
 - name: Packages
   ansible.builtin.include_tasks:
     file: packages.yml
