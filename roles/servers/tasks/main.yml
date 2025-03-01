@@ -15,9 +15,9 @@
   ansible.builtin.include_tasks:
     file: root.yml
 
-- name: SSH
+- name: Users
   ansible.builtin.include_tasks:
-    file: ssh_keys.yml
+    file: users.yml
 
 - name: Timezone
   ansible.builtin.include_tasks:
