@@ -1,6 +1,6 @@
 ---
 - name: Ensure EPEL is installed
-  ansible.builtin. yum_repository:
+  ansible.builtin.yum_repository:
     name: epel
     description: Extra Packages for Enterprise Linux
     baseurl: https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/
