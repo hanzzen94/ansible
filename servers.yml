@@ -2,7 +2,7 @@
 - name: Configure servers
   hosts: servers
   become: true
-  gather_facts: false
+  gather_facts: true
 
   tasks:
     - name: Run tasks in servers role
