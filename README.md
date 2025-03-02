@@ -1,7 +1,3 @@
-# My Ansible Repository
-
-Manage server utilities, configure Podman, set timezone, and update packages using Ansible.
-
 ## Usage
 
 1. Install **Ansible**.
