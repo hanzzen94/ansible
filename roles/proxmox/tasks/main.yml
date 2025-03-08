@@ -5,4 +5,4 @@
 
 - name: Package updates
   ansible.builtin.include_tasks:
-    files: apt_update_upgrade.yml
+    file: apt_update_upgrade.yml
