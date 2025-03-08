@@ -2,3 +2,7 @@
 - name: Packages
   ansible.builtin.include_tasks:
     file: packages.yml
+
+- name: Package updates
+  ansible.builtin.include_tasks:
+    files: apt_update_upgrade.yml
