@@ -1,0 +1,11 @@
+---
+- name: Configure proxmox host
+  hosts: proxmox
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Run tasks in proxmox role
+      ansible.builtin.import_role:
+        name: proxmox
+        tasks_from: main.yml
