@@ -9,4 +9,4 @@
 
 - name: Show updated packages
   ansible.builtin.debug:
-    msg: "{{ updated_packages.results }}"
+    msg: "{{ updated_packages }}"
