@@ -1,0 +1,12 @@
+---
+- name: Ensure packages are up to date
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+    update_cache: true
+    update_only: true
+  register: updated_packages
+
+- name: Show updated packages
+  ansible.builtin.debug:
+    msg: "{{ updated_packages.results }}"
