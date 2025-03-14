@@ -2,23 +2,29 @@
 - name: Repositories
   ansible.builtin.include_tasks:
     file: repos.yml
+  tags: repos
 
 - name: Packages
   ansible.builtin.include_tasks:
     file: packages.yml
+  tags: packages
 
 - name: Prometheus Node Exporter
   ansible.builtin.include_tasks:
     file: prometheus_node_exporter.yml
+  tags: monitoring
 
 - name: Root
   ansible.builtin.include_tasks:
     file: root.yml
+  tags: security
 
 - name: Users
   ansible.builtin.include_tasks:
     file: users.yml
+  tags: users
 
 - name: Timezone
   ansible.builtin.include_tasks:
     file: time_zone.yml
+  tags: timezone
