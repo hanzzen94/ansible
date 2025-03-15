@@ -7,4 +7,4 @@
   tasks:
     - name: Include package upgrade tasks
       ansible.builtin.include_tasks:
-        file: ad_hoc_tasks/yum_upgrade.yml
+        file: roles/servers/tasks/yum_upgrade.yml
